@@ -149,7 +149,7 @@
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
       gap: 28px;
-      align-items: stretch;
+      align-items: start;
     }
 
     .hero-panel,
@@ -717,6 +717,107 @@
       font-size: 0.94rem;
     }
 
+    .tech-showcase {
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .tech-showcase-card {
+      padding: 30px;
+      border-radius: 30px;
+      background:
+        radial-gradient(circle at 18% 18%, rgba(123, 244, 182, 0.14), transparent 20%),
+        radial-gradient(circle at 82% 22%, rgba(125, 240, 255, 0.16), transparent 20%),
+        linear-gradient(135deg, rgba(8, 25, 34, 0.96), rgba(7, 18, 28, 0.94));
+      border: 1px solid rgba(125, 240, 255, 0.12);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tech-showcase-card::before {
+      content: "";
+      position: absolute;
+      inset: 16px;
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      pointer-events: none;
+    }
+
+    .tech-showcase-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .tech-showcase-card h2 {
+      margin-top: 16px;
+      font-size: clamp(2rem, 3.4vw, 3rem);
+      line-height: 1.06;
+      letter-spacing: -0.04em;
+    }
+
+    .tech-showcase-card p {
+      margin-top: 16px;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    .tech-points {
+      margin-top: 22px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .tech-point {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .tech-point strong {
+      display: block;
+      font-size: 0.98rem;
+    }
+
+    .tech-point span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 0.9rem;
+    }
+
+    .tech-image-card {
+      padding: 16px;
+      border-radius: 30px;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(125, 240, 255, 0.14), transparent 22%),
+        linear-gradient(135deg, rgba(8, 23, 39, 0.98), rgba(8, 20, 35, 0.94));
+      border: 1px solid rgba(125, 240, 255, 0.12);
+      box-shadow: var(--shadow);
+    }
+
+    .tech-image-frame {
+      position: relative;
+      min-height: 100%;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .tech-image-frame img {
+      width: 100%;
+      height: 100%;
+      min-height: 460px;
+      object-fit: cover;
+      display: block;
+    }
+
     .coming-soon-card {
       grid-column: 1 / -1;
       position: relative;
@@ -922,6 +1023,51 @@
       line-height: 1.8;
     }
 
+    .partner-logo-row {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .partner-logo-card {
+      padding: 16px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      min-height: 92px;
+    }
+
+    .partner-logo {
+      width: 100%;
+      height: 72px;
+      object-fit: contain;
+      filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.16));
+    }
+
+    .partner-copy strong {
+      display: block;
+      font-size: 0.96rem;
+      line-height: 1.35;
+      text-align: center;
+    }
+
+    .partner-copy span {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.45;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      text-align: center;
+    }
+
     .contact-block {
       margin-top: 24px;
       display: grid;
@@ -976,7 +1122,9 @@
       .market-grid,
       .adv-grid,
       .service-grid,
-      .products-grid {
+      .products-grid,
+      .tech-showcase,
+      .partner-logo-row {
         grid-template-columns: 1fr;
       }
 
@@ -1121,15 +1269,15 @@
         <div class="section-head reveal">
           <div>
             <div class="eyebrow">市场机会</div>
-            <h2>磁控平台正在成为智能医疗的重要支撑基础设施</h2>
+            <h2>磁控平台正在成为各个领域的重要支撑基础设施</h2>
           </div>
-          <p>根据你提供的资料，团队重点判断“微创介入 + 体内导航 + 局部施治”将带动磁控平台快速增长，尤其是微型机器人与精准治疗方向。</p>
+          <p>磁控平台的应用正从智能医疗延展到细胞操控、精准药物递送、微创介入导航、磁性材料测试，以及催化与污染治理等能源环境场景。</p>
         </div>
         <div class="market-grid">
           <article class="metric-card reveal">
             <span>细胞操控相关市场</span>
             <strong>$255.6 亿</strong>
-            <p>资料中列示的 2022 年市场规模，体现基础科研和生物医学应用需求。</p>
+            <p>2022 年的市场规模反映出基础科研和生物医学应用的持续需求。</p>
           </article>
           <article class="metric-card reveal">
             <span>2030 预估规模</span>
@@ -1144,7 +1292,7 @@
           <article class="metric-card reveal">
             <span>2030 预估规模</span>
             <strong>$1045 亿</strong>
-            <p>资料中指出年均复合增长率可达 16.8%，磁控平台具备长期成长空间。</p>
+            <p>年均复合增长率可达 16.8%，磁控平台具备长期成长空间。</p>
           </article>
         </div>
       </div>
@@ -1176,12 +1324,38 @@
 
     <section class="band" id="products">
       <div class="wrap">
+        <div class="tech-showcase" style="margin-bottom: 26px;">
+          <div class="tech-showcase-card reveal">
+            <div class="eyebrow">核心技术方案</div>
+            <h2>基于自主专利，构建全新的电源、驱动与控制技术体系</h2>
+            <p>围绕磁控平台的性能、稳定性与可扩展性，麦格未来采用自主专利支撑的技术路线，形成覆盖电源架构、驱动设计与智能控制的整体解决方案。</p>
+            <div class="tech-points">
+              <div class="tech-point">
+                <strong>自主专利技术</strong>
+                <span>以核心知识产权为基础，持续提升平台在科研与应用场景中的竞争力。</span>
+              </div>
+              <div class="tech-point">
+                <strong>全新电源与驱动方案</strong>
+                <span>围绕磁场输出稳定性、响应效率与系统集成度，打造更可靠的底层硬件能力。</span>
+              </div>
+              <div class="tech-point">
+                <strong>软硬件协同控制</strong>
+                <span>通过一体化控制设计，兼顾实验易用性、平台扩展性与长期应用潜力。</span>
+              </div>
+            </div>
+          </div>
+          <div class="tech-image-card reveal">
+            <div class="tech-image-frame">
+              <img src="./%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/core-tech-board.png" alt="麦格未来自主专利电源驱动与控制技术方案">
+            </div>
+          </div>
+        </div>
         <div class="section-head reveal">
           <div>
             <div class="eyebrow">产品矩阵</div>
             <h2>覆盖显微、标准、八极与软件控制的磁控平台组合</h2>
           </div>
-          <p>页面内容基于 PDF 中披露的产品线信息整理，适合作为官网首屏以下的核心展示区，后续可以再补设备图片与技术规格书下载。</p>
+          <p>这一部分集中展示核心产品线，适合作为官网首屏以下的主要产品展示区，后续也可以继续补充设备图片与技术规格书下载。</p>
         </div>
         <div class="products-grid">
           <article class="product-card product-card-featured reveal">
@@ -1199,7 +1373,7 @@
             <div class="product-media-grid">
               <div class="gallery-frame gallery-frame-main">
                 <div class="gallery-image">
-                  <img src="./corgi-x1/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2026-05-19_223404_359.png" alt="Corgi-X1 显微镜磁控平台整机图">
+                  <img src="./%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/corgi-x1-main.png" alt="Corgi-X1 显微镜磁控平台整机图">
                 </div>
                 <div class="gallery-overlay">
                   <strong>Corgi-X1 整机平台</strong>
@@ -1208,7 +1382,7 @@
               </div>
               <div class="gallery-frame gallery-frame-detail">
                 <div class="gallery-image">
-                  <img src="./corgi-x1/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2026-05-19_223258_945.png" alt="Corgi-X1 线圈模块细节图">
+                  <img src="./%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/corgi-x1-coil.png" alt="Corgi-X1 线圈模块细节图">
                 </div>
                 <div class="gallery-overlay">
                   <strong>Corgi-X1 线圈细节</strong>
@@ -1221,7 +1395,7 @@
             <div class="product-copy">
               <small>Mag-8</small>
               <h3>八极磁场发生器</h3>
-              <p>实现超大工作空间，集成振荡、旋转、梯度磁场，资料显示梯度磁场能力可达 200 T/m，是国产设备的重要突破。</p>
+            <p>实现超大工作空间，集成振荡、旋转、梯度磁场，梯度磁场能力可达 200 T/m，是国产设备的重要突破。</p>
               <div class="tag-row">
                 <span class="tag">超大工作空间</span>
                 <span class="tag">200 T/m</span>
@@ -1234,7 +1408,7 @@
               </div>
               <div class="product-visual-caption">
                 <strong>Mag-8 八极磁场发生器</strong>
-                <span>已接入你提供的 Mag-8 产品图，用来展示八极磁场发生器的整机形态与高性能平台质感。</span>
+                <span>展示八极磁场发生器的整机形态与高性能平台质感，突出大工作空间与强磁场能力。</span>
               </div>
             </div>
           </article>
@@ -1255,7 +1429,7 @@
               </div>
               <div class="product-visual-caption">
                 <strong>Mag-H3 标准磁控平台</strong>
-                <span>已接入你提供的 Mag-H3 产品图，用来展示标准磁控平台的整机形态与设备质感。</span>
+                <span>展示标准磁控平台的整机形态与设备质感，强化科研级设备的稳定与专业形象。</span>
               </div>
             </div>
           </article>
@@ -1276,7 +1450,7 @@
               </div>
               <div class="product-visual-caption">
                 <strong>MagSoft 产品图展示位</strong>
-                <span>已接入你提供的控制系统产品图，用来展示可视化控制界面与全硬件兼容的软件体验。</span>
+                <span>展示可视化控制界面与全硬件兼容的软件体验，突出低门槛与高效率的操作方式。</span>
               </div>
             </div>
           </article>
@@ -1321,7 +1495,7 @@
             <div class="eyebrow">技术优势</div>
             <h2>把科研级性能、国产制造能力和智能软件体验合在一起</h2>
           </div>
-          <p>团队资料提到集成电驱技术、独立电源技术、发明专利与论文成果，这一部分适合对外强化研发实力与可信度。</p>
+          <p>集成电驱技术、独立电源技术、发明专利与论文成果，共同构成了平台的研发实力与技术可信度。</p>
         </div>
         <div class="adv-grid">
           <article class="timeline-card reveal">
@@ -1377,27 +1551,49 @@
         <div class="contact-card reveal">
           <div class="eyebrow">合作方向</div>
           <h2 style="margin-top:18px; font-size:2rem;">从科学设备，走向下一代医疗器械</h2>
-          <p>PDF 中提到团队正在与浙江大学、浙江二院等医疗、制造、教育领域合作方共同推进新一代微纳米磁控精准递药机器人技术。这意味着麦格未来不仅是设备供应方，更是面向科研转化与临床未来的技术平台型公司。</p>
-          <p>如果这页官网后续要继续扩展，我们下一步很适合补上案例、团队介绍、论文专利成果、合作机构和联系表单。</p>
+          <p>团队正与浙江大学、浙江二院等医疗、制造、教育领域合作方共同推进新一代微纳米磁控精准递药机器人技术。麦格未来不仅是设备供应方，更是面向科研转化与临床未来的技术平台型公司。</p>
+          <div class="partner-logo-row">
+            <div class="partner-logo-card">
+              <img class="partner-logo" src="./%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/zju-transparent.png" alt="浙江大学 logo">
+              <div class="partner-copy">
+                <strong>浙江大学</strong>
+                <span>ZHEJIANG UNIVERSITY</span>
+              </div>
+            </div>
+            <div class="partner-logo-card">
+              <img class="partner-logo" src="./%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/hkust-transparent.png" alt="香港科技大学 logo">
+              <div class="partner-copy">
+                <strong>香港科技大学</strong>
+                <span>HKUST</span>
+              </div>
+            </div>
+            <div class="partner-logo-card">
+              <img class="partner-logo" src="./%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/z2-transparent.png" alt="浙江大学医学院附属第二医院 logo">
+              <div class="partner-copy">
+                <strong>浙江大学医学院附属第二医院</strong>
+                <span>THE SECOND AFFILIATED HOSPITAL</span>
+              </div>
+            </div>
+          </div>
+          <p>未来还可继续扩展案例、团队介绍、论文专利成果、合作机构与联系表单等内容，形成更完整的官网呈现。</p>
         </div>
         <div class="contact-card reveal" id="contact">
           <div class="eyebrow">合作咨询</div>
           <h2 style="margin-top:18px; font-size:2rem;">欢迎对接实验室采购、课题合作与应用共创</h2>
-          <div class="contact-block">
-            <div class="contact-item">
-              <strong>公司名称</strong>
-              <span>麦格未来 · Magcorgi</span>
+            <div class="contact-block">
+              <div class="contact-item">
+                <strong>公司名称</strong>
+                <span>广州麦格未来设备制造有限公司</span>
+              </div>
+              <div class="contact-item">
+                <strong>合作方向</strong>
+                <span>磁控平台采购 / 联合研发 / 医疗转化 / 教学实验平台 / 磁控设备供应链合作</span>
+              </div>
+              <div class="contact-item">
+                <strong>联系信息</strong>
+                <span>15196680454（微信同号）</span>
+              </div>
             </div>
-            <div class="contact-item">
-              <strong>合作方向</strong>
-              <span>磁控平台采购 / 联合研发 / 医疗转化 / 教学实验平台</span>
-            </div>
-            <div class="contact-item">
-              <strong>联系信息</strong>
-              <span>邮箱、电话、地址可在最终发布前补充</span>
-            </div>
-          </div>
-          <p class="contact-note">当前页面基于你提供的 PDF 先完成首版官网内容，未在资料中出现的联系信息我没有擅自补写。</p>
           <div class="hero-actions">
             <a class="button button-primary" href="javascript:void(0)">立即咨询</a>
             <a class="button button-secondary" href="#top">返回顶部</a>
